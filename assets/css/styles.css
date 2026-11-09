@@ -5,15 +5,25 @@
 
 :root {
   --green: #1f3c2b;
+ /* color principal*/
   --green-2: #376b43;
+/*color secundario*/
   --light-green: #e9eee3;
+  /*para fondos*/
   --cream: #f8f7f1;
+/*color para fondos*/
   --paper: #fffefb;
+  /*para tarjetas*/
   --ink: #26352b;
+  /*color del texto (tinta)*/
   --muted: #69716a;
+  /*gris para textos secundarios*/
   --line: #e4e5dc;
+  /*color de borde y esquinas*/
   --radius: 18px;
+  /*redondeo de esquinas*/
   --shadow: 0 8px 26px rgba(31, 60, 43, .08);
+  /*sombra suave para tarjetas*/
 }
 
 * {
