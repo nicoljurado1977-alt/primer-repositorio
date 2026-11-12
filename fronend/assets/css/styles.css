@@ -1,8 +1,4 @@
 
-/* =========================================
-   1. CONFIGURACIÓN GENERAL
-========================================= */
-
 :root {
   --green: #1f3c2b;
  /* color principal*/
@@ -757,4 +753,34 @@ footer {
     object-fit: cover;
     object-position: center;
     border-radius: 12px;
+}
+
+/* Interacción de las categorías del mapa */
+
+/* Interacción de las categorías del mapa */
+
+#categorias-mapa .category {
+    cursor: pointer;
+    padding: 10px 12px;
+    border: 2px solid transparent;
+    border-radius: 14px;
+    background-color: transparent;
+    color: var(--green);
+    transition: all 0.3s ease;
+}
+
+/* Categoría seleccionada */
+
+#categorias-mapa .category.activo {
+    background-color: #0f3021;
+    color: white;
+    border-color: #2f6b4f;
+    box-shadow: 0 4px 12px rgba(15, 48, 33, 0.25);
+}
+
+/* Icono de la categoría seleccionada */
+
+#categorias-mapa .category.activo .category-icon {
+    background-color: #113019;
+    color: white;
 }

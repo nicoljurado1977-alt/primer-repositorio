@@ -158,3 +158,23 @@ corazones.forEach(function(corazon) {
     });
 
 });
+/* Interacción de las categorías del mapa */
+
+const categoriasMapa = document.querySelectorAll("#categorias-mapa .category");
+
+categoriasMapa.forEach(function(categoria) {
+
+    categoria.addEventListener("click", function() {
+
+        // Quitamos la selección anterior
+        categoriasMapa.forEach(function(elemento) {
+            elemento.classList.remove("activo");
+        });
+
+        // Activamos la categoría seleccionada
+        categoria.classList.add("activo");
+
+       
+    });
+
+});
