@@ -17,4 +17,19 @@ mensaje.style.fontStyle = "italic";
 mensaje.style.textAlign = "center";
 
 //Botones de la sección hero//
+// 1. Seleccionamos el botón
+const botonLogin = document.getElementById("btn-iniciar-sesion");
 
+botonLogin.addEventListener("click", function() {
+
+    if (botonLogin.textContent === "Iniciar sesión") {
+
+        botonLogin.textContent = "¡Bienvenido!";
+
+    } else {
+
+        botonLogin.textContent = "Iniciar sesión";
+
+    }
+
+});
