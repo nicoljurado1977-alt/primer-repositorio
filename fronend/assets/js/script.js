@@ -33,3 +33,32 @@ botonLogin.addEventListener("click", function() {
     }
 
 });
+//section categorias//
+
+const botonNaturaleza = document.getElementById("btn-naturaleza");
+const botonArquitectura = document.getElementById("btn-arquitectura");
+const botonTexturas = document.getElementById("btn-texturas");
+const botonMomentos = document.getElementById("btn-momentos");
+
+// Función para mostrar el mensaje de la categoría//
+function mostrarMensajeCategoria(mensaje) {
+
+    mensajeCategoria.textContent = mensaje;
+}
+
+    //conectar botones//
+botonNaturaleza.addEventListener("click", function() {
+    mostrarMensajeCategoria("Descubre la naturaleza que habita en Cali.");
+});
+
+botonArquitectura.addEventListener("click", function() {
+    mostrarMensajeCategoria("Descubre la arquitectura de Cali.");
+});
+
+botonTexturas.addEventListener("click", function() {
+    mostrarMensajeCategoria("Descubre las texturas urbanas de Cali.");
+});
+
+botonMomentos.addEventListener("click", function() {
+    mostrarMensajeCategoria("Descubre los momentos cotidianos de Cali.");
+});
