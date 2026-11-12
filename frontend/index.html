@@ -249,6 +249,58 @@
     </div>
 
 </section>
+<!-- Formulario para compartir experiencias -->
+<section class="section container" id="compartir">
+
+    <div class="section-heading">
+        <div>
+            <h2>Comparte tu mirada de Cali</h2>
+            <p>Publica esos pequeños detalles que merecen ser descubiertos.</p>
+        </div>
+    </div>
+
+    <form id="form-experiencia">
+
+        <label for="titulo-experiencia">Título de la experiencia</label>
+        <input
+            type="text"
+            id="titulo-experiencia"
+            placeholder="Ejemplo: Los colores de mi barrio"
+            required
+        >
+
+        <label for="categoria-experiencia">Categoría</label>
+        <select id="categoria-experiencia" required>
+            <option value="">Selecciona una categoría</option>
+            <option value="naturaleza">Naturaleza</option>
+            <option value="arquitectura">Arquitectura</option>
+            <option value="arte">Arte</option>
+            <option value="recuerdos">Recuerdos</option>
+            <option value="texturas">Texturas</option>
+        </select>
+
+        <label for="descripcion-experiencia">Descripción</label>
+        <textarea
+            id="descripcion-experiencia"
+            placeholder="Cuéntanos qué hace especial este lugar..."
+            required
+        ></textarea>
+
+        <label for="lugar-experiencia">Barrio o lugar</label>
+        <input
+            type="text"
+            id="lugar-experiencia"
+            placeholder="Ejemplo: San Antonio"
+            required
+        >
+
+        <button type="submit">
+            Compartir experiencia
+        </button>
+
+    </form>
+
+</section>
 
     <!-- Acerca de la propuesta -->
     <section

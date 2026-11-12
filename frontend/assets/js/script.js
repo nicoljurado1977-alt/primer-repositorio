@@ -216,19 +216,7 @@ const experienciasMapa = [
     }
 ];
 
-// marcador.addEventListener("click", function() {
 
-    // Comprobamos si el marcador ya estaba seleccionado
-    if (marcador.classList.contains("activo")) {
-
-        marcador.classList.remove("activo");
-
-        infoMapa.textContent = "Selecciona un marcador para conocer la experiencia.";
-
-        return;
-    }
-
-    // Quitamos la selección anterior
   // 4. Recorremos los marcadores
 marcadoresMapa.forEach(function(marcador, indice) {
 
@@ -263,5 +251,74 @@ marcadoresMapa.forEach(function(marcador, indice) {
         `;
 
     });
+
+});
+
+// FORMULARIO PARA COMPARTIR EXPERIENCIAS
+
+// 1. Seleccionamos el formulario
+const formularioExperiencia = document.getElementById("form-experiencia");
+
+// 2. Seleccionamos el espacio de las publicaciones
+const contenedorExperiencias = document.querySelector("#explorar .cards");
+
+// 3. Escuchamos cuando se envía el formulario
+formularioExperiencia.addEventListener("submit", function(event) {
+
+    event.preventDefault();
+
+    const titulo = document.getElementById("titulo-experiencia").value;
+    const categoria = document.getElementById("categoria-experiencia");
+    const descripcion = document.getElementById("descripcion-experiencia").value;
+    const lugar = document.getElementById("lugar-experiencia").value;
+
+    const tarjeta = document.createElement("article");
+    tarjeta.classList.add("experience-card");
+
+    const cuerpo = document.createElement("div");
+    cuerpo.classList.add("card-body");
+
+    const etiqueta = document.createElement("span");
+    etiqueta.classList.add("tag");
+    etiqueta.textContent = categoria.options[categoria.selectedIndex].textContent;
+
+    const encabezado = document.createElement("h3");
+    encabezado.textContent = titulo;
+
+    const texto = document.createElement("p");
+    texto.textContent = descripcion;
+
+    const meta = document.createElement("div");
+    meta.classList.add("card-meta");
+
+    const ubicacion = document.createElement("span");
+    ubicacion.classList.add("location");
+    ubicacion.textContent = "⌖ " + lugar;
+
+    const corazonNuevo = document.createElement("button");
+    corazonNuevo.type = "button";
+    corazonNuevo.classList.add("heart");
+    corazonNuevo.setAttribute("aria-label", "Agregar a favoritos");
+    corazonNuevo.textContent = "♡";
+    corazonNuevo.addEventListener("click", function() {
+        if (corazonNuevo.textContent.trim() === "♡") {
+            corazonNuevo.textContent = "♥";
+            corazonNuevo.style.color = "red";
+        } else {
+            corazonNuevo.textContent = "♡";
+            corazonNuevo.style.color = "";
+        }
+    });
+
+    meta.append(ubicacion, corazonNuevo);
+    cuerpo.append(etiqueta, encabezado, texto, meta);
+    tarjeta.appendChild(cuerpo);
+
+    contenedorExperiencias.prepend(tarjeta);
+
+    formularioExperiencia.reset();
+
+    // Llevamos al usuario a la tarjeta nueva
+    tarjeta.scrollIntoView({ behavior: "smooth", block: "center" });
 
 });
