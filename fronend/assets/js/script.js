@@ -33,32 +33,94 @@ botonLogin.addEventListener("click", function() {
     }
 
 });
+
+
 //section categorias//
 
+
+// SECTION CATEGORÍAS //
+
+// 1. Seleccionamos los botones
 const botonNaturaleza = document.getElementById("btn-naturaleza");
 const botonArquitectura = document.getElementById("btn-arquitectura");
 const botonTexturas = document.getElementById("btn-texturas");
 const botonMomentos = document.getElementById("btn-momentos");
 
-// Función para mostrar el mensaje de la categoría//
-function mostrarMensajeCategoria(mensaje) {
+// 2. Seleccionamos los espacios donde mostraremos el contenido
+const mensajeCategoria = document.getElementById("mensaje-categoria");
 
-    mensajeCategoria.textContent = mensaje;
+const publicacionesCategorias = document.getElementById("publicaciones-categorias");
+
+// 3. Función para cambiar el color de los botones
+function seleccionarCategoria(botonSeleccionado) {
+
+    botonNaturaleza.classList.remove("activo");
+    botonArquitectura.classList.remove("activo");
+    botonTexturas.classList.remove("activo");
+    botonMomentos.classList.remove("activo");
+
+    botonSeleccionado.classList.add("activo");
+
 }
 
-    //conectar botones//
+// 4. Función para mostrar las publicaciones
+function mostrarPublicaciones(titulo, descripcion) {
+
+    publicacionesCategorias.innerHTML = `
+        <article class="experience-card">
+            <div class="card-body">
+                <h3>${titulo}</h3>
+                <p>${descripcion}</p>
+            </div>
+        </article>
+    `;
+
+}
+
+// 5. Evento del botón Naturaleza
 botonNaturaleza.addEventListener("click", function() {
-    mostrarMensajeCategoria("Descubre la naturaleza que habita en Cali.");
+
+    seleccionarCategoria(botonNaturaleza);
+
+    mostrarPublicaciones(
+        "Naturaleza en Cali",
+        "Descubre los espacios verdes, árboles y paisajes de la ciudad."
+    );
+
 });
 
+// 6. Evento del botón Arquitectura
 botonArquitectura.addEventListener("click", function() {
-    mostrarMensajeCategoria("Descubre la arquitectura de Cali.");
+
+    seleccionarCategoria(botonArquitectura);
+
+    mostrarPublicaciones(
+        "Arquitectura en Cali",
+        "Explora los edificios y estructuras que definen el paisaje urbano de la ciudad."
+    );
+
 });
 
+// 7. Evento del botón Texturas urbanas
 botonTexturas.addEventListener("click", function() {
-    mostrarMensajeCategoria("Descubre las texturas urbanas de Cali.");
+
+    seleccionarCategoria(botonTexturas);
+
+    mostrarPublicaciones(
+        "Texturas en Cali",
+        "Descubre las texturas urbanas de la ciudad."
+    );
+
 });
 
+// 8. Evento del botón Momentos cotidianos
 botonMomentos.addEventListener("click", function() {
-    mostrarMensajeCategoria("Descubre los momentos cotidianos de Cali.");
+
+    seleccionarCategoria(botonMomentos);
+
+    mostrarPublicaciones(
+        "Momentos cotidianos en Cali",
+        "Descubre las historias y experiencias que ocurren en la vida diaria de la ciudad."
+    );
+
 });

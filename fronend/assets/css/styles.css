@@ -404,7 +404,25 @@ p {
   flex-wrap: wrap;
   gap: 14px;
 }
+/* Estilo de los botones de categorías */
 
+#categorias .cards button {
+    padding: 12px 20px;
+    border: 1px solid var(--line);
+    border-radius: 999px;
+    background: var(--paper);
+    color: var(--green);
+    font-weight: 600;
+    transition: background-color .3s ease, color .3s ease;
+}
+
+/* Estilo del botón seleccionado */
+
+#categorias .cards button.activo {
+    background-color: var(--green-2);
+    color: white;
+    border-color: var(--green-2);
+}
 .category {
   min-width: 62px;
   text-align: center;
