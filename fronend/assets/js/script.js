@@ -178,3 +178,90 @@ categoriasMapa.forEach(function(categoria) {
     });
 
 });
+
+// INTERACCIÓN DEL MAPA
+
+// 1. Seleccionamos los cinco marcadores
+const marcadoresMapa = document.querySelectorAll("#mapa .pin");
+
+// 2. Seleccionamos el espacio donde aparecerá la información
+const infoMapa = document.getElementById("info-mapa");
+
+// 3. Creamos la información de cada marcador
+const experienciasMapa = [
+    {
+        titulo: "Naturaleza en Cali",
+        categoria: "Naturaleza",
+        descripcion: "Descubre los árboles, zonas verdes y pequeños espacios naturales de la ciudad."
+    },
+    {
+        titulo: "Arquitectura de Cali",
+        categoria: "Arquitectura",
+        descripcion: "Conoce los edificios, fachadas y estructuras que dan identidad a Cali."
+    },
+    {
+        titulo: "Arte urbano",
+        categoria: "Arte",
+        descripcion: "Explora los murales, colores y expresiones artísticas que encontramos en las calles."
+    },
+    {
+        titulo: "Recuerdos de la ciudad",
+        categoria: "Recuerdos",
+        descripcion: "Descubre los lugares y momentos cotidianos que construyen recuerdos."
+    },
+    {
+        titulo: "Texturas urbanas",
+        categoria: "Texturas",
+        descripcion: "Observa los materiales, formas y detalles que cuentan historias en las calles."
+    }
+];
+
+// marcador.addEventListener("click", function() {
+
+    // Comprobamos si el marcador ya estaba seleccionado
+    if (marcador.classList.contains("activo")) {
+
+        marcador.classList.remove("activo");
+
+        infoMapa.textContent = "Selecciona un marcador para conocer la experiencia.";
+
+        return;
+    }
+
+    // Quitamos la selección anterior
+  // 4. Recorremos los marcadores
+marcadoresMapa.forEach(function(marcador, indice) {
+
+    marcador.addEventListener("click", function() {
+
+        // Comprobamos si el marcador ya está seleccionado
+        if (marcador.classList.contains("activo")) {
+
+            marcador.classList.remove("activo");
+
+            infoMapa.textContent = "Selecciona un marcador para conocer la experiencia.";
+
+            return;
+        }
+
+        // Quitamos la selección anterior
+        marcadoresMapa.forEach(function(elemento) {
+            elemento.classList.remove("activo");
+        });
+
+        // Activamos el marcador seleccionado
+        marcador.classList.add("activo");
+
+        // Obtenemos la información correspondiente
+        const experiencia = experienciasMapa[indice];
+
+        // Mostramos la información
+        infoMapa.innerHTML = `
+            <h3>${experiencia.titulo}</h3>
+            <span>${experiencia.categoria}</span>
+            <p>${experiencia.descripcion}</p>
+        `;
+
+    });
+
+});

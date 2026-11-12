@@ -227,21 +227,25 @@
     </div>
 
     <!-- Mapa ilustrativo -->
-    <div
-        class="map-art"
+    <div class="map-art"
+    
         role="img"
         aria-label="Ilustración de un mapa urbano con marcadores de experiencias"
     >
-        <span class="pin p1"></span>
-        <span class="pin p2"></span>
-        <span class="pin p3"></span>
-        <span class="pin p4"></span>
-        <span class="pin p5"></span>
+        <button type="button" class="pin p1" aria-label="Experiencia 1"></button>
+<button type="button" class="pin p2" aria-label="Experiencia 2"></button>
+<button type="button" class="pin p3" aria-label="Experiencia 3"></button>
+<button type="button" class="pin p4" aria-label="Experiencia 4"></button>
+<button type="button" class="pin p5" aria-label="Experiencia 5"></button>
+
         <span class="map-label">Cali</span>
 
         <span class="map-note">
             Mapa ilustrativo · Próximamente interactivo
         </span>
+        <div id="info-mapa" aria-live="polite">
+    Selecciona un marcador para conocer la experiencia.
+</div>
     </div>
 
 </section>
