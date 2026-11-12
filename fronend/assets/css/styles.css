@@ -743,3 +743,18 @@ footer {
     gap: 15px;
   }
 }
+/* Imagen de las tarjetas de publicaciones */
+
+.experience-card {
+    width: 100%;
+    max-width: 350px;
+    overflow: hidden;
+}
+
+.experience-card img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 12px;
+}

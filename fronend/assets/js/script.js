@@ -64,16 +64,24 @@ function seleccionarCategoria(botonSeleccionado) {
 }
 
 // 4. Función para mostrar las publicaciones
-function mostrarPublicaciones(titulo, descripcion) {
+function mostrarPublicaciones(titulo, descripcion, imagen) {
 
     publicacionesCategorias.innerHTML = `
-        <article class="experience-card">
+    <article class="experience-card">
+  
+<img 
+                src="${imagen}" 
+                alt="${titulo}"
+            >
+
             <div class="card-body">
                 <h3>${titulo}</h3>
                 <p>${descripcion}</p>
             </div>
+
         </article>
     `;
+
 
 }
 
@@ -84,7 +92,8 @@ botonNaturaleza.addEventListener("click", function() {
 
     mostrarPublicaciones(
         "Naturaleza en Cali",
-        "Descubre los espacios verdes, árboles y paisajes de la ciudad."
+        "Descubre los espacios verdes, árboles y paisajes de la ciudad.",
+        "./assets/img/parque-ingenio.jpg"
     );
 
 });
@@ -96,7 +105,8 @@ botonArquitectura.addEventListener("click", function() {
 
     mostrarPublicaciones(
         "Arquitectura en Cali",
-        "Explora los edificios y estructuras que definen el paisaje urbano de la ciudad."
+        "Explora los edificios y estructuras que definen el paisaje urbano de la ciudad.",
+        "./assets/img/teatro-municipal.jpg"
     );
 
 });
@@ -108,7 +118,8 @@ botonTexturas.addEventListener("click", function() {
 
     mostrarPublicaciones(
         "Texturas en Cali",
-        "Descubre las texturas urbanas de la ciudad."
+        "Descubre las texturas urbanas de la ciudad.",
+        "./assets/img/textura-calle.jpg"
     );
 
 });
@@ -120,7 +131,8 @@ botonMomentos.addEventListener("click", function() {
 
     mostrarPublicaciones(
         "Momentos cotidianos en Cali",
-        "Descubre las historias y experiencias que ocurren en la vida diaria de la ciudad."
+        "Descubre las historias y experiencias que ocurren en la vida diaria de la ciudad.",
+        "./assets/img/momentos-cotidianos.jpg"
     );
 
 });
