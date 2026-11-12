@@ -136,3 +136,25 @@ botonMomentos.addEventListener("click", function() {
     );
 
 });
+
+const corazon = document.querySelector(".heart");
+
+
+const corazones = document.querySelectorAll(".heart");
+
+// Recorremos cada corazón
+corazones.forEach(function(corazon) {
+
+    corazon.addEventListener("click", function() {
+
+        if (corazon.textContent.trim() === "♡") {
+            corazon.textContent = "♥";
+            corazon.style.color = "red";
+        } else {
+            corazon.textContent = "♡";
+            corazon.style.color = "";
+        }
+
+    });
+
+});
